@@ -8,7 +8,6 @@
 
 10.times do
   User.create(email: Faker::Internet.email,
-              user_no: Digest::UUID.uuid_v5(Digest::UUID::DNS_NAMESPACE, 'user'),
               password: "password")
               #password_confirm: "password")
 
