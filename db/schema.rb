@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_11_085514) do
+ActiveRecord::Schema.define(version: 2020_07_11_100129) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -30,16 +30,18 @@ ActiveRecord::Schema.define(version: 2020_07_11_085514) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.decimal "borrow_price", default: "0.0", null: false
+    t.integer "stock", default: 0, null: false
   end
 
   create_table "borrows", force: :cascade do |t|
     t.string "isbn"
     t.integer "user_id"
-    t.date "borrow_date"
-    t.date "return_date"
+    t.datetime "borrow_date"
+    t.datetime "return_date"
     t.string "remark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "book_id"
   end
 
   create_table "users", force: :cascade do |t|
