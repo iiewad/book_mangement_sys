@@ -7,11 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  User.create(email: Faker::Internet.email,
-              password: "password")
-              #password_confirm: "password")
+  user = User.create(email: Faker::Internet.email,
+                     password: "password")
 
-  Book.create(isbn: Digest::UUID.uuid_v5(Digest::UUID::DNS_NAMESPACE, 'isbn'),
+  account = Account.create(user_id: user.id, balance: 100.to_d)
+
+  Book.create(isbn: Faker::Code.isbn,
               title: Faker::Book.title,
               author: Faker::Book.author,
               publisher: Faker::Book.publisher,
