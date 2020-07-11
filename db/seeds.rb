@@ -10,12 +10,14 @@
   user = User.create(email: Faker::Internet.email,
                      password: "password")
 
-  account = Account.create(user_id: user.id, balance: 100.to_d)
+  Account.create(user_id: user.id, balance: 100.to_d)
 
   Book.create(isbn: Faker::Code.isbn,
               title: Faker::Book.title,
               author: Faker::Book.author,
               publisher: Faker::Book.publisher,
-              publish_date: Faker::Date.birthday(min_age: 18, max_age: 65))
+              publish_date: Faker::Date.birthday(min_age: 18, max_age: 65),
+              borrow_price: Faker::Commerce.price.to_d
+             )
 end
 
