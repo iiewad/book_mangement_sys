@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         end
       end
       resources :borrows, only: [:create]
+      resources :books, only: [:show]
     end
   end
 end
