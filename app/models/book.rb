@@ -10,7 +10,7 @@ class Book < ApplicationRecord
       isbn: isbn,
       author: author,
       publisher: publisher,
-      publish_date: publish_date,
+      publish_date: publish_date.strftime("%FT%T"),
     }
   end
 end
