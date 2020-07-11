@@ -7,6 +7,6 @@ class User < ApplicationRecord
   before_create :generate_user_no
 
   def generate_user_no
-    self.user_no = Digest::UUID.uuid_v5(Digest::UUID::DNS_NAMESPACE, 'user_no')
+    self.user_no = SecureRandom.hex(10)
   end
 end
