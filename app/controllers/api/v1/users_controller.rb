@@ -1,4 +1,13 @@
 class Api::V1::UsersController < Api::BaseController
+  def show
+    user = User.find_by(user_no: params[:user_no])
+    data = {
+      balance: user.account.balance,
+      borrow_books: user.borrows.map(&:as_json)
+    }
+    return render json: {code: 0, data: data, msg: "ok"}
+  end
+
   def init_users
     raise 'Params Error' if params[:amount].to_i <= 0
     users = []

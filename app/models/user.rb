@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :borrows
+  has_many :books, through: :borrows
   has_one :account
 
   before_create :generate_user_no
