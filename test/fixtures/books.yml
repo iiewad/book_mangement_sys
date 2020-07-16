@@ -9,3 +9,32 @@
 #
 # two: {}
 # column: value
+one:
+  id: 1
+  isbn: "242309126-5"
+  author: "Mr. Kristan Will"
+  publisher: "Seagull Books"
+  title: "A Summer Bird-Cage"
+  borrow_price: 0.4859e2
+  stock: 7
+  publish_date: "Tue, 13 Apr 1993 00:00:00 UTC +00:00"
+
+two:
+  id: 2
+  isbn: "463766449-7"
+  author: "Ferdinand Torp"
+  publisher: "Golden Cockerel Press"
+  title: "Lilies of the Field"
+  borrow_price: 0.1113e2
+  stock: 9
+  publish_date: "Sun, 04 Sep 1988 00:00:00 UTC +00:00"
+
+three:
+  id: 3
+  isbn: "236586700-6"
+  author: "Tory Jakubowski Esq."
+  publisher: "Target Books"
+  title: "Consider Phlebas"
+  borrow_price: 0.7922e2
+  stock: 0
+  publish_date: "Sat, 20 Feb 1982 00:00:00 UTC +00:00"
