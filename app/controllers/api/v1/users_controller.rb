@@ -2,7 +2,7 @@ class Api::V1::UsersController < Api::BaseController
   def show
     user = User.find_by(user_no: params[:user_no])
     data = {
-      balance: user.account.balance,
+      balance: user.account&.balance,
       borrow_books: user.borrows.map(&:as_json)
     }
     return render json: {code: 0, data: data, msg: "ok"}
@@ -16,7 +16,7 @@ class Api::V1::UsersController < Api::BaseController
       Account.create!(user_id: user.id, balance: 1000.to_d)
       users << user
     end
-    return render json: {code: 0, data: users.pluck(:user_no), msg: "ok"}
+    return render json: {code: 0, data: users.pluck(:user_no), msg: "ok"}, status: 200
   end
 
 end
